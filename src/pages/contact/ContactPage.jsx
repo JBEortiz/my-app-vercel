@@ -18,12 +18,13 @@ const ContactPage = () => {
       .then(
         (result) => {
           console.log(result.text);
+          alert("Mensaje enviado correctamente");
         },
         (error) => {
           console.log(error.text);
         }
       );
-      return true;
+    
   };
 
   return (
