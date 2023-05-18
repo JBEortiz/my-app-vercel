@@ -1,85 +1,95 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Navbar from '../Navbar';
-import {
-  ChevronRightIcon,
-  StarIcon,
-} from '@heroicons/react/20/solid'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "../Navbar";
+import { ChevronRightIcon, StarIcon } from "@heroicons/react/20/solid";
 async function getRepos() {
-    const response = await axios.get('https://api.github.com/users/JBEortiz/repos');
-    return response.data;
-  }
+  const response = await axios.get(
+    "https://api.github.com/users/JBEortiz/repos"
+  );
+  return response.data;
+}
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 const ProjectPage = () => {
-    const [repos, setRepos] = useState([]);
-  
-    useEffect(() => {
-      async function fetchData() {
-        const data = await getRepos();
-        setRepos(data);
-      }
-      fetchData();
-    }, []);
-    return (
-        <div>
-        <div className="bg-white">
-             
-       
-        <main className="isolate">
-        <div className="animate__animated animate__rollIn animate__slower absolute inset-x-0 top-[-10rem] -z-10 transform-gpu blur-1xl sm:top-[-22rem]">
-              <svg
-                className="w-full h-auto left-[calc(100%-13rem)] -z-10 h-[70.1875rem] max-w-none -translate-x-1/2 rotate-[220deg] sm:left-[calc(50%-0rem)] sm:h-[74.375rem]"
-                viewBox="0 0 1155 678"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-                  fillOpacity=".5"
-                  d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-                />
-                <defs>
-                  <linearGradient
-                    id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-                    x1="5.49"
-                    x2="-78.208"
-                    y1=".177"
-                    y2="474.645"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#67e8f9"/>
-                    <stop offset={1} stopColor="#9089FC" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-      
-        <Navbar></Navbar>
-        <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
-         <div className="animate__animated animate__fadeIn mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl hover:-translate-y-1 hover:scale-110 hover:text-sky-500 duration-300">
-                  Pruebas de concepto
-                <span className="block text-indigo-500 hover:text-sky-500 duration-300">+ proyectos </span>
-              </h1>
-              <p className="mx-auto mt-3 max-w-md text-base text-gray-900 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
-                Mi pequeña <strong className='text-indigo-500'>enciclopedia</strong> donde se encuentran mis  <strong className='text-indigo-500'>proyectos y pruebas de concepto</strong>, que muchas veces me resultan muy útiles para recordar cómo solucionar alguna problemática.
-              </p>
-            </div>
-          </div>
-          <br></br>
+  const [repos, setRepos] = useState([]);
 
-          <div className="animate__animated animate__fadeIn rounded-lg lg:min-w-0 lg:flex-1 border-solid border-2 border-indigo-200 ">
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getRepos();
+      setRepos(data);
+    }
+    fetchData();
+  }, []);
+  return (
+    <div>
+      <div className="bg-white">
+        <main className="isolate">
+          <div className="animate__animated animate__rollIn animate__slower absolute inset-x-0 top-[-10rem] -z-10 transform-gpu blur-1xl sm:top-[-22rem]">
+            <svg
+              className="w-full h-auto left-[calc(100%-13rem)] -z-10 h-[70.1875rem] max-w-none -translate-x-1/2 rotate-[220deg] sm:left-[calc(50%-0rem)] sm:h-[74.375rem]"
+              viewBox="0 0 1155 678"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+                fillOpacity=".5"
+                d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+              />
+              <defs>
+                <linearGradient
+                  id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+                  x1="5.49"
+                  x2="-78.208"
+                  y1=".177"
+                  y2="474.645"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#67e8f9" />
+                  <stop offset={1} stopColor="#9089FC" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <Navbar></Navbar>
+          <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+            <div className="animate__animated animate__fadeIn mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
+              <div className="text-center">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl hover:-translate-y-1 hover:scale-110 hover:text-sky-500 duration-300">
+                  Pruebas de concepto
+                  <span className="block text-indigo-500 hover:text-sky-500 duration-300">
+                    + proyectos{" "}
+                  </span>
+                </h1>
+                <p className="mx-auto mt-3 max-w-md text-base text-gray-900 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+                  Mi pequeña{" "}
+                  <strong className="text-indigo-500">enciclopedia</strong>{" "}
+                  donde se encuentran mis{" "}
+                  <strong className="text-indigo-500">
+                    proyectos y pruebas de concepto
+                  </strong>
+                  , que muchas veces me resultan muy útiles para recordar cómo
+                  solucionar alguna problemática.
+                </p>
+              </div>
+            </div>
+            <br></br>
+
+            <div className="animate__animated animate__fadeIn rounded-lg lg:min-w-0 lg:flex-1 border-solid border-2 border-indigo-200 ">
               <div className="border-b border-t border-indigo-200 pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:border-t-0 xl:pl-6 xl:pt-6">
                 <div className="flex items-center">
-                  <h1 className="flex-1 text-lg font-medium"><strong className='text-indigo-500'>Proyectos :</strong></h1>
-                 
+                  <h1 className="flex-1 text-lg font-medium">
+                    <strong className="text-indigo-500">Proyectos :</strong>
+                  </h1>
                 </div>
               </div>
-              <ul role="list" className="divide-y divide-indigo-200 border-b border-indigo-200">
+              <ul
+                role="list"
+                className="divide-y divide-indigo-200 border-b border-indigo-200"
+              >
                 {repos.map((project) => (
                   <li
                     key={project.id}
@@ -91,28 +101,40 @@ const ProjectPage = () => {
                         <div className="flex items-center space-x-3">
                           <span
                             className={classNames(
-                              project.has_wiki ? 'bg-indigo-100' : 'bg-gray-100',
-                              'h-4 w-4 rounded-full flex items-center justify-center'
+                              project.has_wiki
+                                ? "bg-indigo-100"
+                                : "bg-gray-100",
+                              "h-4 w-4 rounded-full flex items-center justify-center"
                             )}
                             aria-hidden="true"
                           >
                             <span
                               className={classNames(
-                                project.has_wiki ? 'bg-indigo-400' : 'bg-gray-400',
-                                'h-2 w-2 rounded-full'
+                                project.has_wiki
+                                  ? "bg-indigo-400"
+                                  : "bg-gray-400",
+                                "h-2 w-2 rounded-full"
                               )}
                             />
                           </span>
 
                           <h2 className="text-sm font-medium">
                             <a href={project.svn_url}>
-                              <span className="absolute inset-0" aria-hidden="true" />
-                              {project.name}{' '}
-                              <span className="sr-only">{project.active ? 'Running' : 'Not running'}</span>
+                              <span
+                                className="absolute inset-0"
+                                aria-hidden="true"
+                              />
+                              {project.name}{" "}
+                              <span className="sr-only">
+                                {project.active ? "Running" : "Not running"}
+                              </span>
                             </a>
                           </h2>
                         </div>
-                        <a href={project.svn_url} className="group relative flex items-center space-x-2.5">
+                        <a
+                          href={project.svn_url}
+                          className="group relative flex items-center space-x-2.5"
+                        >
                           <svg
                             className="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-Sky-100"
                             viewBox="0 0 18 18"
@@ -133,7 +155,10 @@ const ProjectPage = () => {
                         </a>
                       </div>
                       <div className="sm:hidden">
-                        <ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                        <ChevronRightIcon
+                          className="h-5 w-5 text-gray-400"
+                          aria-hidden="true"
+                        />
                       </div>
                       {/* Repo meta info */}
                       <div className="hidden flex-shrink-0 flex-col items-end space-y-3 sm:flex">
@@ -149,14 +174,16 @@ const ProjectPage = () => {
                             className="relative rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                           >
                             <span className="sr-only">
-                              {project.starred ? 'Add to favorites' : 'Remove from favorites'}
+                              {project.starred
+                                ? "Add to favorites"
+                                : "Remove from favorites"}
                             </span>
                             <StarIcon
                               className={classNames(
-                                project.stargazers_count>0
-                                  ? 'text-sky-300 hover:text-sky-400'
-                                  : 'text-gray-300 hover:text-Sky-200',
-                                'h-5 w-5'
+                                project.stargazers_count > 0
+                                  ? "text-sky-300 hover:text-sky-400"
+                                  : "text-gray-300 hover:text-Sky-200",
+                                "h-5 w-5"
                               )}
                               aria-hidden="true"
                             />
@@ -165,7 +192,12 @@ const ProjectPage = () => {
                         <p className="flex space-x-2 text-sm text-gray-500">
                           <span>{project.language}</span>
                           <span aria-hidden="true">&middot;</span>
-                          <span>Last deploy {new Date(project.created_at).toISOString().slice(0, 10)}</span>
+                          <span>
+                            Last deploy{" "}
+                            {new Date(project.created_at)
+                              .toISOString()
+                              .slice(0, 10)}
+                          </span>
                           <span aria-hidden="true">&middot;</span>
                           <span>{project.visibility}</span>
                         </p>
@@ -175,39 +207,39 @@ const ProjectPage = () => {
                 ))}
               </ul>
             </div>
-            </div>
-            <div className="animate__animated animate__rotateInDownLeft animate__slow animate__delay-3s absolute inset-x-10 -z-10 sm:top-[50rem]">
-        <svg
-          className="h-[0rem] left-[calc(90%-11rem)] max-w-none -translate-x-1/2 rotate-[180deg] sm:left-[calc(50%-0rem)] sm:h-[35.375rem]"
-          viewBox="0 0 1155 678"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-            fillOpacity=".4"
-            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-          />
-          <defs>
-            <linearGradient
-              id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-              x1="1155.49"
-              x2="-78.208"
-              y1=".177"
-              y2="474.645"
-              gradientUnits="userSpaceOnUse"
+          </div>
+          <div className="animate__animated animate__rotateInDownLeft animate__slow animate__delay-3s absolute inset-x-10 -z-10 sm:top-[50rem]">
+            <svg
+              className="h-[0rem] left-[calc(90%-11rem)] max-w-none -translate-x-1/2 rotate-[180deg] sm:left-[calc(50%-0rem)] sm:h-[35.375rem]"
+              viewBox="0 0 1155 678"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <stop stopColor="#67e8f9"/>
-              <stop offset={1} stopColor="#67e8f9" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      </main>
+              <path
+                fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+                fillOpacity=".4"
+                d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+              />
+              <defs>
+                <linearGradient
+                  id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+                  x1="1155.49"
+                  x2="-78.208"
+                  y1=".177"
+                  y2="474.645"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#67e8f9" />
+                  <stop offset={1} stopColor="#67e8f9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </main>
       </div>
       <br></br>
-      </div>
-    );
-}
+    </div>
+  );
+};
 
 export default ProjectPage;

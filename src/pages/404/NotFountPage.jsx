@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink} from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NotFountPage = () => {
   return (
@@ -18,24 +18,25 @@ const NotFountPage = () => {
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
               This page does not exist.
             </h1>
-            <p className="mt-2 text-lg text-gray-500">The page you are looking for could not be found.</p>
+            <p className="mt-2 text-lg text-gray-500">
+              The page you are looking for could not be found.
+            </p>
           </div>
           <div className="mt-12">
-            
             <div className="mt-8">
-            <NavLink
-                to="/home" 
-                className="text-base font-medium text-indigo-600 hover:text-indigo-500">
+              <NavLink
+                to="/home"
+                className="text-base font-medium text-indigo-600 hover:text-indigo-500"
+              >
                 Or go back home
                 <span aria-hidden="true"> &rarr;</span>
-            </NavLink>
+              </NavLink>
             </div>
           </div>
         </div>
       </main>
-     
     </div>
-  )
-}
+  );
+};
 
 export default NotFountPage;
