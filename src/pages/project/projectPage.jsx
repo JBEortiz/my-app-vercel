@@ -64,7 +64,7 @@ const ProjectPage = () => {
                     + proyectos{" "}
                   </span>
                 </h1>
-                <p className="mx-auto mt-3 max-w-md text-base text-gray-900 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+                <p className="mx-auto mt-3 max-w-md text-base text-gray-900 sm:text-lg md:mt-5">
                   Mi pequeña{" "}
                   <strong className="text-indigo-500">enciclopedia</strong>{" "}
                   donde se encuentran mis{" "}
