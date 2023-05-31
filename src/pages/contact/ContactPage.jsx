@@ -63,9 +63,9 @@ const ContactPage = () => {
         <div className="animate__animated animate__fadeIn bg-warm-gray-50">
           <div className="py-24 lg:py-32">
             <div className="relative z-10 mx-auto max-w-7xl pl-4 pr-8 sm:px-6 lg:px-8">
-              <h1 className="text-4xl font-bold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl hover:-translate-y-1 hover:scale-105 hover:text-sky-500 duration-300">
+              <p className="text-4xl font-bold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl hover:-translate-y-1 hover:scale-105 hover:text-sky-500 duration-300">
                 ¡Ponte en contacto conmigo!
-              </h1>
+              </p>
               <p className="mt-6 max-w-3xl text-xl text-warm-gray-500">
                 ¡Hola! Si necesitas contactarme por algún motivo, por favor no
                 dudes en hacerlo. Puedes enviarme un correo electrónico a la
@@ -196,9 +196,9 @@ const ContactPage = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-white">
+                  <p className="text-lg font-medium text-white">
                     Información de contacto
-                  </h3>
+                  </p>
                   <p className="mt-6 max-w-3xl text-base text-teal-50">
                     Además de mi correo electrónico y formulario de contacto,
                     también puedes encontrarme en Twitter, Instagram y Facebook.
@@ -284,8 +284,7 @@ const ContactPage = () => {
                       <button
                         type="submit"
                         className="mt-2 inline-flex w-full items-center justify-center rounded-full border border-transparent bg-sky-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:w-auto "
-                      >
-                        Submit
+                        aria-label="Enviar">Enviar
                       </button>
                     </div>
                   </form>
