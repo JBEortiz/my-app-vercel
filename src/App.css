@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+
+@keyframes exotic-spinner {
+  0% {
+    transform: rotate(0deg) scale(13);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(180deg) scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(360deg) scale(0.5);
+    opacity: 0.4;
+  }
+  75% {
+    transform: rotate(540deg) scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-top: 5px solid #8b5cf6;
+  border-right: 5px solid #0ea5e9;
+  border-bottom: 5px solid #a5b4fc;
+  border-left: 5px solid white;
+  animation: exotic-spinner 2s linear infinite;
+}

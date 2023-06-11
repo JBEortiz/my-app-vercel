@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../Navbar";
 import { ChevronRightIcon, StarIcon } from "@heroicons/react/20/solid";
+import Spinner from "../../components/SpinnerComponent";
 async function getRepos() {
   const response = await axios.get(
     "https://api.github.com/users/JBEortiz/repos"
@@ -12,19 +13,24 @@ async function getRepos() {
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
 const ProjectPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
+    setTimeout(() => {
     async function fetchData() {
       const data = await getRepos();
       setRepos(data);
+      setIsLoading(false);
     }
     fetchData();
+  }, 1000);
   }, []);
   return (
     <div>
-      <div className="bg-white">
+      <div className="bg-white ">
         <main className="isolate">
           <div className="animate__animated animate__rollIn animate__slower absolute inset-x-0 top-[-10rem] -z-10 transform-gpu blur-1xl sm:top-[-22rem]">
             <svg
@@ -77,7 +83,11 @@ const ProjectPage = () => {
               </div>
             </div>
             <br></br>
+            <div>
 
+            {isLoading ? (
+        <Spinner />
+      ) : (
             <div className="animate__animated animate__fadeIn rounded-lg lg:min-w-0 lg:flex-1 border-solid border-2 border-indigo-200 ">
               <div className="border-b border-t border-indigo-200 pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:border-t-0 xl:pl-6 xl:pt-6">
                 <div className="flex items-center">
@@ -90,7 +100,7 @@ const ProjectPage = () => {
                 role="list"
                 className="divide-y divide-indigo-200 border-b border-indigo-200"
               >
-                {repos.map((project) => (
+                { repos.map((project) => (
                   <li
                     key={project.id}
                     className="relative py-5 pl-4 pr-6 hover:bg-indigo-100 hover:rounded-lg sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6 transition ease-in-out hover:-translate-y-2 hover:scale-105"
@@ -206,6 +216,8 @@ const ProjectPage = () => {
                   </li>
                 ))}
               </ul>
+              </div>
+              )}
             </div>
           </div>
           <div className="animate__animated animate__rotateInDownLeft animate__slow animate__delay-3s absolute inset-x-10 -z-10 sm:top-[50rem]">
