@@ -9,7 +9,7 @@ const HomePage = () => {
       <main className="isolate ">
         <div className="animate__animated animate__rollIn animate__slower absolute inset-x-0 top-[-10rem] -z-10 transform-gpu blur-1xl sm:top-[-22rem]">
           <svg
-            className="w-full h-auto left-[calc(100%-13rem)] -z-10 h-[70.1875rem] max-w-none -translate-x-1/2 rotate-[220deg] sm:left-[calc(50%-0rem)] sm:h-[74.375rem]"
+           className="h-[0rem] left-[calc(100%-13rem)] -z-10 h-[70.1875rem] max-w-none -translate-x-1/2 rotate-[220deg] sm:left-[calc(50%-0rem)] sm:h-[74.375rem]"
             viewBox="0 0 1155 678"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const HomePage = () => {
         <BlogComponent></BlogComponent>
         <div className="animate__animated animate__rotateInDownLeft animate__slow animate__delay-3s absolute inset-x-10 -z-10 sm:top-[50rem] w-full h-auto">
           <svg
-            className="w-full md:w-auto left-[calc(90%-11rem)] max-w-none -translate-x-1/2 rotate-[180deg] sm:left-[calc(50%-0rem)] sm:h-[35.375rem]"
+            className="h-[0rem] left-[calc(90%-11rem)] max-w-none -translate-x-1/2 rotate-[180deg] sm:left-[calc(50%-0rem)] sm:h-[35.375rem]"
             viewBox="0 0 1155 678"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
