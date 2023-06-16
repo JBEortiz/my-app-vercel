@@ -70,4 +70,11 @@
   border-bottom: 5px solid #a5b4fc;
   border-left: 5px solid white;
   animation: exotic-spinner 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
 }
+
+
